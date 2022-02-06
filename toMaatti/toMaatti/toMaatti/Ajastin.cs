@@ -7,6 +7,9 @@ using System.Timers;
 
 namespace toMaatti
 {
+    /// <summary>
+    /// Ajastinluokka.
+    /// </summary>
     public class Ajastin
     {
 
@@ -16,12 +19,20 @@ namespace toMaatti
         public int alkuSekunnit;
         public int ajastusSekunteina;
         public Timer ajastin;
-
+        public int nytTunnit;
+        public int nytMinuutit;
+        public int nytSekunnit;
+        /// <summary>
+        /// Constructor, jolle voidaan jo ajastin luotaessa syöttää ajastettava aika.
+        /// </summary>
+        /// <param name="h"></param>
+        /// <param name="min"></param>
+        /// <param name="sek"></param>
         public Ajastin(int h = 0, int min = 0, int sek = 0)
         {
-            tunnit = h;
-            minuutit = min;
-            sekunnit = sek;
+            alkuTunnit = h;
+            alkuMinuutit = min;
+            alkuSekunnit = sek;
             ajastin = new Timer(1000);
             ajastin.AutoReset = true;
         }
